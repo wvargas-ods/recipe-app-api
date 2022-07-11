@@ -10,3 +10,9 @@ docker-compose run --rm app sh -c "python manage.py test"
 # Django new project
 docker-compose run --rm app sh -c "django-admin startproject app ."
 
+# Django core
+docker-compose run --rm app sh -c "python manage.py startapp core"
+
+# Django DB migrations
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+docker-compose run --rm app sh -c "python manage.py migrate"
